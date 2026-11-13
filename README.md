@@ -6,7 +6,7 @@
 
 <!-- TODO: replace the two href="#" with the store listing links -->
 <p align="center">
-  <a href="#"><img src="screenshots/get-firefox.svg" alt="Get on Firefox Add-ons" height="56"></a>&nbsp;&nbsp;<a href="#"><img src="screenshots/get-chrome.svg" alt="Get on Chrome Web Store" height="56"></a>
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/crunchydub/"><img src="screenshots/get-firefox.svg" alt="Get on Firefox Add-ons" height="56"></a>&nbsp;&nbsp;<a href="#"><img src="screenshots/get-chrome.svg" alt="Get on Chrome Web Store" height="56"></a>
 </p>
 
 | Dub tags on every card | Also in the hover card |
