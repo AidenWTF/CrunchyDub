@@ -1,6 +1,6 @@
 # CrunchyDub
 
-A Firefox add-on that shows which dub languages every Crunchyroll series has, and lets you filter by them.
+A Firefox and Chrome extension that shows which dub languages every Crunchyroll series has, and lets you filter by them.
 
 | Dub tags on every card | Also in the hover card |
 | --- | --- |

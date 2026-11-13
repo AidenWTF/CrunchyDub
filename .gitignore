@@ -1,4 +1,6 @@
+dist/
 web-ext-artifacts/
 debug/
+store/
 SUBMISSION.md
 node_modules/

@@ -1,6 +1,12 @@
 "use strict";
 
 /* Code shared by the background and content scripts. */
+
+// Chrome only has `chrome.*`; its MV3 APIs return promises just like Firefox's `browser.*`.
+if (typeof globalThis.browser === "undefined" && typeof globalThis.chrome !== "undefined") {
+  globalThis.browser = globalThis.chrome;
+}
+
 var CDUB = (() => {
   // Short badge label + full name for the audio locales Crunchyroll uses.
   const LANGS = {
