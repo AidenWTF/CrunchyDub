@@ -1,4 +1,4 @@
-# CrunchyDub
+![CrunchyDub](screenshots/banner.png)
 
 A Firefox and Chrome extension that shows which dub languages every Crunchyroll series has, and lets you filter by them.
 
