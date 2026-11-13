@@ -1,0 +1,46 @@
+# Push a tag like v1.6.0 → builds the Firefox and Chrome zips and publishes them as a GitHub Release.
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check tag matches the manifest versions
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          for m in manifest.json manifest.chrome.json; do
+            v=$(node -p "require('./$m').version")
+            if [ "$v" != "$tag" ]; then
+              echo "::error::Tag $GITHUB_REF_NAME does not match $m version $v"
+              exit 1
+            fi
+          done
+
+      - name: Build
+        run: ./build.sh
+
+      - name: Lint the Firefox build
+        run: npx --yes web-ext@8 lint --source-dir dist/firefox --warnings-as-errors
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            "dist/crunchydub-firefox-${GITHUB_REF_NAME#v}.zip" \
+            "dist/crunchydub-chrome-${GITHUB_REF_NAME#v}.zip" \
+            --title "CrunchyDub ${GITHUB_REF_NAME#v}" \
+            --generate-notes

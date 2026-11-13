@@ -1,6 +1,13 @@
 ![CrunchyDub](screenshots/banner.png)
 
-A Firefox and Chrome extension that shows which dub languages every Crunchyroll series has, and lets you filter by them.
+<p align="center">
+  A Firefox and Chrome extension that shows which dub languages every Crunchyroll series has, and lets you filter by them.
+</p>
+
+<!-- TODO: replace the two href="#" with the store listing links -->
+<p align="center">
+  <a href="#"><img src="screenshots/get-firefox.svg" alt="Get on Firefox Add-ons" height="56"></a>&nbsp;&nbsp;<a href="#"><img src="screenshots/get-chrome.svg" alt="Get on Chrome Web Store" height="56"></a>
+</p>
 
 | Dub tags on every card | Also in the hover card |
 | --- | --- |
